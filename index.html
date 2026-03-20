@@ -66,7 +66,8 @@
 
   /* ── CONTENT WRAPPER ── */
   main { position: relative; z-index: 1; }
-/* ── NAV ── */
+
+  /* ── NAV ── */
   nav {
     position: sticky;
     top: 0;
@@ -80,101 +81,6 @@
     border-bottom: 1px solid var(--panel-border);
   }
 
-  /* Tombol Menu Garis 3 */
-  .menu-toggle {
-    display: none;
-    cursor: pointer;
-    font-size: 28px;
-    color: var(--green-glow);
-  }
-
-  /* --- MOBILE RESPONSIVE CODE --- */
-  @media (max-width: 768px) {
-    nav { padding: 15px 25px; }
-    .menu-toggle { display: block; } /* Muncul di HP */
-    
-    .nav-links {
-      display: none; /* Sembunyi sebelum diklik */
-      flex-direction: column;
-      position: absolute;
-      top: 100%; left: 0; width: 100%;
-      background: rgba(2, 7, 4, 0.98);
-      padding: 20px;
-      border-bottom: 1px solid var(--panel-border);
-      text-align: center;
-      gap: 15px;
-    }
-
-    .nav-links.active { display: flex; } /* Muncul saat diklik */
-
-    /* Matikan Kursor & Atur Layout Menurun */
-    .cursor-follower, .cursor-dot { display: none !important; }
-    .hero-content, .grid-layout, .container { 
-      flex-direction: column !important; 
-      text-align: center;
-    }
-    .panel { width: 100% !important; margin-bottom: 20px; }
-  }
-
-  /* Tombol Garis 3 (Hidden by default on Desktop) */
-  .menu-toggle {
-    display: none;
-    cursor: pointer;
-    font-size: 24px;
-    color: var(--green-glow);
-    user-select: none;
-  }
-
-  /* ── MOBILE OVERRIDES (Paste di bawah nav tadi) ── */
-  @media (max-width: 768px) {
-    nav {
-      padding: 15px 25px; /* Lebih sempit di HP */
-    }
-      <nav>
-  <div class="logo">EXXE.LAB</div>
-  
-  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-  
-  <div class="nav-links" id="navLinks">
-    <a href="#terminal">TERMINAL</a>
-    <a href="#network">NETWORK</a>
-    <a href="#nodes">NODES</a>
-  </div>
-</nav>
-
-    .menu-toggle {
-      display: block; /* Muncul di HP */
-    }
-
-    .nav-links {
-      display: none; /* Sembunyi sebelum diklik */
-      flex-direction: column;
-      position: absolute;
-      top: 100%;
-      right: 0;
-      width: 100%;
-      background: rgba(2, 7, 4, 0.98);
-      padding: 20px;
-      border-bottom: 1px solid var(--panel-border);
-      gap: 15px;
-      text-align: center;
-    }
-
-    .nav-links.active {
-      display: flex; /* Muncul pas diklik */
-    }
-
-    /* MATIKAN KURSOR DI HP */
-    .cursor-follower, .cursor-dot {
-      display: none !important;
-    }
-
-    /* BIAR TAMPILAN DESKTOP MENURUN KE BAWAH */
-    .grid-layout, .container, .hero-section {
-      flex-direction: column !important;
-    }
-  }
-    
   .logo {
     font-family: var(--font-display);
     font-weight: 800;
@@ -981,13 +887,7 @@
     overflow-x: hidden;
     position: relative;
   }
-<script>
-  function toggleMenu() {
-    const nav = document.getElementById('navLinks');
-    nav.classList.toggle('active');
-  }
-</script>
-      
+
   /* ── ANIMATED BACKGROUND ── */
   .bg-canvas {
     position: fixed;
@@ -2535,9 +2435,9 @@
       <div class="footer-copy">© 2026 EXXE.LAB. All Rights Reserved.<br>Precision Quantitative Trading Engine — B2B Only.</div>
     </div>
     <div class="footer-contact">
-      <a href="mailto:exxequant@gmail.com" class="footer-wa-link">
+      <a href="/cdn-cgi/l/email-protection#8aeff2f2effbffebe4fecaede7ebe3e6a4e9e5e7" class="footer-wa-link">
         <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block;vertical-align:middle;margin-right:5px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        exxequant@gmail.com
+        <span class="__cf_email__" data-cfemail="d8bda0a0bda9adb9b6ac98bfb5b9b1b4f6bbb7b5">[email&#160;protected]</span>
       </a>
       <a href="https://wa.me/+6282155095289" target="_blank" class="footer-wa-link">
         <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block;vertical-align:middle;margin-right:5px;"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
@@ -2549,7 +2449,7 @@
           <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
         </a>
         <!-- Email icon -->
-        <a href="mailto:exxequant@gmail.com" title="Email">
+        <a href="/cdn-cgi/l/email-protection#74110c0c110501151a00341319151d185a171b19" title="Email">
           <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         </a>
         <!-- Twitter/X icon -->
@@ -2561,7 +2461,7 @@
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 <script>
 // ── GREEN CURSOR — Convex Glass Lens with Dynamic Reflection ──
 (function () {
@@ -3009,15 +2909,171 @@ if (wlPanel) {
 
     let timer = setInterval(() => { if (!isDragging) goTo(current + 1); }, 3800);
     wrap.addEventListener('mouseenter', () => clearInterval(timer));
-    wrap.addEventListener('mouseleave', () => {
-      timer = setInterval(() => { if (!isDragging) goTo(current + 1); }, 3800);
-    });
+    wrap.addEventListener('mouseleave', () => { timer = setInterval(() => { if (!isDragging) goTo(current + 1); }, 3800); });
+  }
+  initSlider();
+}());
+</script>
+
+<!-- ═══════════════════════════════════════
+     MOBILE ONLY ADDITIONS - tidak mempengaruhi desktop
+     ═══════════════════════════════════════ -->
+<style>
+/* Hamburger button - hidden on desktop */
+.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:6px;cursor:pointer;z-index:9999;position:relative;}
+.nav-hamburger span{display:block;width:22px;height:2px;background:#00ff7a;border-radius:2px;box-shadow:0 0 6px #00ff7a66;transition:all .32s cubic-bezier(.16,1,.3,1);}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+/* Mobile drawer - hidden on desktop */
+.mob-drawer{position:fixed;top:0;right:0;bottom:0;width:270px;max-width:85vw;background:rgba(2,8,4,.97);border-left:1px solid rgba(0,255,122,.15);backdrop-filter:blur(28px);z-index:9998;display:flex;flex-direction:column;padding:70px 26px 30px;gap:2px;transform:translateX(100%);transition:transform .38s cubic-bezier(.16,1,.3,1);}
+.mob-drawer.open{transform:translateX(0);}
+.mob-drawer a{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;letter-spacing:.14em;color:#7aad8a;text-decoration:none;padding:13px 0;border-bottom:1px solid rgba(0,255,122,.07);transition:color .2s;}
+.mob-drawer a:active{color:#00ff7a;}
+.mob-drawer .mob-wa{margin-top:14px;display:flex!important;align-items:center;justify-content:center;gap:8px;background:rgba(0,255,122,.1)!important;border:1px solid rgba(0,255,122,.3)!important;color:#00ff7a!important;padding:12px 14px!important;border-radius:10px;font-size:.72rem!important;}
+
+/* Backdrop */
+.mob-backdrop{display:none;position:fixed;inset:0;background:rgba(2,7,4,.6);backdrop-filter:blur(4px);z-index:9997;opacity:0;transition:opacity .3s;}
+.mob-backdrop.show{opacity:1;}
+
+/* Touch ripple */
+.mob-ripple{position:fixed;pointer-events:none;z-index:99999;border-radius:50%;width:0;height:0;border:1.5px solid rgba(0,255,122,.5);background:radial-gradient(circle,rgba(0,255,122,.1) 0%,transparent 70%);transform:translate(-50%,-50%);opacity:0;}
+@keyframes mobRipple{0%{width:0;height:0;opacity:.75;}100%{width:68px;height:68px;opacity:0;}}
+.mob-ripple.go{animation:mobRipple .5s ease-out forwards;}
+
+/* ── ONLY on mobile ≤768px ── */
+@media(max-width:768px){
+  /* Show hamburger, hide desktop nav links */
+  .nav-hamburger{display:flex!important;}
+  .nav-links{display:none!important;}
+  .mob-drawer{display:flex;}
+  .mob-backdrop{display:block;}
+
+  /* Cursor off on touch */
+  *{cursor:auto!important;}
+  #cursor-dot,#cursor-lens,#cursor-click-ripple{display:none!important;}
+
+  /* Hero stack */
+  #hero{padding:0 18px!important;}
+  .hero-inner{grid-template-columns:1fr!important;gap:36px!important;padding:88px 0 50px!important;}
+
+  /* Sections */
+  section{padding:52px 18px!important;max-width:100%!important;}
+
+  /* Grids to single column */
+  .engine-grid,.perf-grid,.plans-grid,.signals-grid,.commit-grid{grid-template-columns:1fr!important;}
+
+  /* Featured plan no scale */
+  .plan-card.featured{transform:none!important;}
+
+  /* White label */
+  .whitlabel-panel{flex-direction:column!important;padding:20px 18px!important;}
+
+  /* Jim */
+  .jim-tribute-wrap{min-height:340px!important;}
+  .jim-img{width:60%!important;}
+  .jim-quote-block{padding:32px 14px 32px 6px!important;max-width:100%!important;}
+
+  /* Founder CTA */
+  .founder-cta-section{padding:52px 18px!important;}
+  .founder-3d-btn-inner{padding:16px 22px!important;font-size:.88rem!important;}
+
+  /* Footer */
+  footer{padding:30px 18px!important;max-width:100%!important;}
+  .footer-inner{flex-direction:column!important;gap:20px!important;}
+  .footer-contact{text-align:left!important;}
+  .footer-socials{justify-content:flex-start!important;}
+}
+@media(max-width:480px){
+  #hero{padding:0 14px!important;}
+  section{padding:44px 14px!important;}
+  .founder-3d-btn-inner{padding:14px 18px!important;font-size:.82rem!important;}
+}
+</style>
+
+<!-- Hamburger button injected into nav via JS below -->
+<!-- Mobile drawer HTML -->
+<div class="mob-backdrop" id="mobBackdrop"></div>
+<div class="mob-drawer" id="mobDrawer">
+  <a href="#hero">HOME</a>
+  <a href="#engine">ENGINE</a>
+  <a href="#performance">PERFORMANCE</a>
+  <a href="#plans">PLANS</a>
+  <a href="#founder-cta">CONTACT</a>
+  <a href="https://wa.me/+6282155095289" target="_blank" class="mob-wa">
+    <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+    CONTACT FOUNDER
+  </a>
+</div>
+<div class="mob-ripple" id="mobRipple"></div>
+
+<script>
+(function(){
+  /* Inject hamburger button into nav */
+  var nav = document.querySelector('nav');
+  if(nav){
+    var btn = document.createElement('button');
+    btn.className = 'nav-hamburger';
+    btn.id = 'navHam';
+    btn.setAttribute('aria-label','Menu');
+    btn.innerHTML = '<span></span><span></span><span></span>';
+    nav.appendChild(btn);
   }
 
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initSlider);
-  else initSlider();
-})();
+  var ham      = document.getElementById('navHam');
+  var drawer   = document.getElementById('mobDrawer');
+  var backdrop = document.getElementById('mobBackdrop');
+  var ripple   = document.getElementById('mobRipple');
+
+  /* Hamburger toggle */
+  function openDrawer(){
+    ham.classList.add('open');
+    drawer.classList.add('open');
+    backdrop.classList.add('show');
+    document.body.style.overflow='hidden';
+  }
+  function closeDrawer(){
+    ham.classList.remove('open');
+    drawer.classList.remove('open');
+    backdrop.classList.remove('show');
+    document.body.style.overflow='';
+  }
+  if(ham){
+    ham.addEventListener('click',function(e){
+      e.stopPropagation();
+      drawer.classList.contains('open')?closeDrawer():openDrawer();
+    });
+  }
+  if(backdrop) backdrop.addEventListener('click',closeDrawer);
+  if(drawer){
+    drawer.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click',closeDrawer);
+    });
+  }
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeDrawer();});
+
+  /* Touch ripple - only on touch devices */
+  var isTouch = ('ontouchstart' in window)||(navigator.maxTouchPoints>0);
+  if(!isTouch) return;
+
+  /* Hide desktop cursor on touch */
+  ['cursor-dot','cursor-lens','cursor-click-ripple'].forEach(function(id){
+    var el=document.getElementById(id);
+    if(el) el.style.display='none';
+  });
+
+  if(!ripple) return;
+  document.addEventListener('touchstart',function(e){
+    var t=e.touches[0];
+    if(!t) return;
+    ripple.style.left=t.clientX+'px';
+    ripple.style.top=t.clientY+'px';
+    ripple.classList.remove('go');
+    void ripple.offsetWidth;
+    ripple.classList.add('go');
+  },{passive:true});
+}());
 </script>
 </body>
 </html>
-
