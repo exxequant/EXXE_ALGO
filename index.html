@@ -6,6 +6,68 @@
 <title>EXXE.LAB — Precision Quantitative Trading Engine</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Space+Mono:wght@400;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  /* MOBILE RESPONSIVE OVERRIDE */
+@media (max-width: 768px) {
+    /* 1. Navbar Adjustment */
+    nav {
+        padding: 12px 5% !important;
+        height: auto !important;
+        position: fixed !important; /* Keeps it at the top */
+        background: rgba(2, 7, 4, 0.95) !important; /* Solid background for mobile readability */
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--panel-border);
+    }
+
+    .nav-content {
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+    }
+
+    /* 2. Navigation Links - Makes them smaller and centered */
+    .nav-links {
+        display: flex !important;
+        gap: 12px !important;
+    }
+
+    .nav-links a {
+        font-size: 10px !important;
+        letter-spacing: 1px !important;
+        text-transform: uppercase;
+    }
+
+    /* 3. Hero Section / Main Title */
+    body {
+        padding-top: 80px !important; /* Prevents Navbar from covering the content */
+    }
+
+    h1 {
+        font-size: 2.2rem !important; /* Smaller title for mobile */
+        line-height: 1.1 !important;
+        text-align: center;
+        margin-top: 20px !important;
+    }
+
+    /* 4. Panels and Containers */
+    .container, .panel, .grid-layout {
+        width: 92% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding: 15px !important;
+        grid-template-columns: 1fr !important; /* Forces 1 column layout */
+    }
+
+    /* 5. Slider Adjustment */
+    .slider-wrap {
+        height: auto !important;
+        min-height: 300px;
+    }
+
+    .slide-content h2 {
+        font-size: 1.5rem !important;
+    }
+}
+  
 <style>
   :root {
     --black: #020704;
@@ -2921,34 +2983,3 @@ if (wlPanel) {
 </body>
 </html>
 
-@media (max-width: 768px) {
-  /* 1. Paksa semua container yang tadinya menyamping jadi ke bawah */
-  .container, .nav-content, .hero-section, .footer-grid {
-    flex-direction: column !important;
-    text-align: center;
-    padding: 20px !important;
-  }
-
-  /* 2. Sesuaikan ukuran font yang terlalu besar */
-  h1 {
-    font-size: 2.5rem !important; /* Kecilkan judul utama */
-    line-height: 1.1;
-  }
-
-  /* 3. Pastikan gambar atau video tidak meluber keluar layar */
-  img, video, iframe {
-    max-width: 100% !important;
-    height: auto !important;
-  }
-
-  /* 4. Jika ada grid (misal 3 kolom), jadikan 1 kolom saja */
-  .grid-layout {
-    grid-template-columns: 1fr !important;
-  }
-}
-
-@media (max-width: 600px) {
-  .slider-item {
-    width: 100% !important; /* Pastikan satu slide memenuhi layar HP */
-  }
-}
