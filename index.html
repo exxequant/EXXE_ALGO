@@ -7,68 +7,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Space+Mono:wght@400;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
-/* MOBILE RESPONSIVE OVERRIDE */
-@media (max-width: 768px) {
-    /* 1. Navbar Adjustment */
-    nav {
-        padding: 12px 5% !important;
-        height: auto !important;
-        position: fixed !important; /* Keeps it at the top */
-        background: rgba(2, 7, 4, 0.95) !important; /* Solid background for mobile readability */
-        backdrop-filter: blur(10px);
-        border-bottom: 1px solid var(--panel-border);
-    }
-
-    .nav-content {
-        flex-direction: row !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-    }
-
-    /* 2. Navigation Links - Makes them smaller and centered */
-    .nav-links {
-        display: flex !important;
-        gap: 12px !important;
-    }
-
-    .nav-links a {
-        font-size: 10px !important;
-        letter-spacing: 1px !important;
-        text-transform: uppercase;
-    }
-
-    /* 3. Hero Section / Main Title */
-    body {
-        padding-top: 80px !important; /* Prevents Navbar from covering the content */
-    }
-
-    h1 {
-        font-size: 2.2rem !important; /* Smaller title for mobile */
-        line-height: 1.1 !important;
-        text-align: center;
-        margin-top: 20px !important;
-    }
-
-    /* 4. Panels and Containers */
-    .container, .panel, .grid-layout {
-        width: 92% !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-        padding: 15px !important;
-        grid-template-columns: 1fr !important; /* Forces 1 column layout */
-    }
-
-    /* 5. Slider Adjustment */
-    .slider-wrap {
-        height: auto !important;
-        min-height: 300px;
-    }
-
-    .slide-content h2 {
-        font-size: 1.5rem !important;
-    }
-}
-  
   :root {
     --black: #020704;
     --deep-green: #050f08;
@@ -128,8 +66,7 @@
 
   /* ── CONTENT WRAPPER ── */
   main { position: relative; z-index: 1; }
-
-  /* ── NAV ── */
+/* ── NAV ── */
   nav {
     position: sticky;
     top: 0;
@@ -143,6 +80,101 @@
     border-bottom: 1px solid var(--panel-border);
   }
 
+  /* Tombol Menu Garis 3 */
+  .menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 28px;
+    color: var(--green-glow);
+  }
+
+  /* --- MOBILE RESPONSIVE CODE --- */
+  @media (max-width: 768px) {
+    nav { padding: 15px 25px; }
+    .menu-toggle { display: block; } /* Muncul di HP */
+    
+    .nav-links {
+      display: none; /* Sembunyi sebelum diklik */
+      flex-direction: column;
+      position: absolute;
+      top: 100%; left: 0; width: 100%;
+      background: rgba(2, 7, 4, 0.98);
+      padding: 20px;
+      border-bottom: 1px solid var(--panel-border);
+      text-align: center;
+      gap: 15px;
+    }
+
+    .nav-links.active { display: flex; } /* Muncul saat diklik */
+
+    /* Matikan Kursor & Atur Layout Menurun */
+    .cursor-follower, .cursor-dot { display: none !important; }
+    .hero-content, .grid-layout, .container { 
+      flex-direction: column !important; 
+      text-align: center;
+    }
+    .panel { width: 100% !important; margin-bottom: 20px; }
+  }
+
+  /* Tombol Garis 3 (Hidden by default on Desktop) */
+  .menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: var(--green-glow);
+    user-select: none;
+  }
+
+  /* ── MOBILE OVERRIDES (Paste di bawah nav tadi) ── */
+  @media (max-width: 768px) {
+    nav {
+      padding: 15px 25px; /* Lebih sempit di HP */
+    }
+      <nav>
+  <div class="logo">EXXE.LAB</div>
+  
+  <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  
+  <div class="nav-links" id="navLinks">
+    <a href="#terminal">TERMINAL</a>
+    <a href="#network">NETWORK</a>
+    <a href="#nodes">NODES</a>
+  </div>
+</nav>
+
+    .menu-toggle {
+      display: block; /* Muncul di HP */
+    }
+
+    .nav-links {
+      display: none; /* Sembunyi sebelum diklik */
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      width: 100%;
+      background: rgba(2, 7, 4, 0.98);
+      padding: 20px;
+      border-bottom: 1px solid var(--panel-border);
+      gap: 15px;
+      text-align: center;
+    }
+
+    .nav-links.active {
+      display: flex; /* Muncul pas diklik */
+    }
+
+    /* MATIKAN KURSOR DI HP */
+    .cursor-follower, .cursor-dot {
+      display: none !important;
+    }
+
+    /* BIAR TAMPILAN DESKTOP MENURUN KE BAWAH */
+    .grid-layout, .container, .hero-section {
+      flex-direction: column !important;
+    }
+  }
+    
   .logo {
     font-family: var(--font-display);
     font-weight: 800;
@@ -949,7 +981,13 @@
     overflow-x: hidden;
     position: relative;
   }
-
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById('navLinks');
+    nav.classList.toggle('active');
+  }
+</script>
+      
   /* ── ANIMATED BACKGROUND ── */
   .bg-canvas {
     position: fixed;
