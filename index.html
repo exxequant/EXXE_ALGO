@@ -2920,3 +2920,35 @@ if (wlPanel) {
 </script>
 </body>
 </html>
+
+@media (max-width: 768px) {
+  /* 1. Paksa semua container yang tadinya menyamping jadi ke bawah */
+  .container, .nav-content, .hero-section, .footer-grid {
+    flex-direction: column !important;
+    text-align: center;
+    padding: 20px !important;
+  }
+
+  /* 2. Sesuaikan ukuran font yang terlalu besar */
+  h1 {
+    font-size: 2.5rem !important; /* Kecilkan judul utama */
+    line-height: 1.1;
+  }
+
+  /* 3. Pastikan gambar atau video tidak meluber keluar layar */
+  img, video, iframe {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  /* 4. Jika ada grid (misal 3 kolom), jadikan 1 kolom saja */
+  .grid-layout {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .slider-item {
+    width: 100% !important; /* Pastikan satu slide memenuhi layar HP */
+  }
+}
