@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=1280">
 <title>EXXE.LAB — Precision Quantitative Trading Engine</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Space+Mono:wght@400;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
@@ -739,7 +739,7 @@
   }
 
   /* ── CUSTOM GREEN CURSOR ── */
-  * { cursor: none !important; }
+  @media(hover:hover)and(pointer:fine){* { cursor: none !important; }}
 
   /* DOT */
   #cursor-dot {
@@ -1591,7 +1591,7 @@
   }
 
   /* ── CUSTOM GREEN CURSOR ── */
-  * { cursor: none !important; }
+  @media(hover:hover)and(pointer:fine){* { cursor: none !important; }}
 
   /* ── DOT: snaps to cursor, small glowing point ── */
   #cursor-dot {
@@ -2435,9 +2435,9 @@
       <div class="footer-copy">© 2026 EXXE.LAB. All Rights Reserved.<br>Precision Quantitative Trading Engine — B2B Only.</div>
     </div>
     <div class="footer-contact">
-      <a href="/cdn-cgi/l/email-protection#92f7eaeaf7e3e7f3fce6d2f5fff3fbfebcf1fdff" class="footer-wa-link">
+      <a href="/cdn-cgi/l/email-protection#a5c0ddddc0d4d0c4cbd1e5c2c8c4ccc98bc6cac8" class="footer-wa-link">
         <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block;vertical-align:middle;margin-right:5px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        <span class="__cf_email__" data-cfemail="86e3fefee3f7f3e7e8f2c6e1ebe7efeaa8e5e9eb">[email&#160;protected]</span>
+        <span class="__cf_email__" data-cfemail="ef8a97978a9e9a8e819baf88828e8683c18c8082">[email&#160;protected]</span>
       </a>
       <a href="https://wa.me/+6282155095289" target="_blank" class="footer-wa-link">
         <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block;vertical-align:middle;margin-right:5px;"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
@@ -2449,7 +2449,7 @@
           <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
         </a>
         <!-- Email icon -->
-        <a href="/cdn-cgi/l/email-protection#b3d6cbcbd6c2c6d2ddc7f3d4ded2dadf9dd0dcde" title="Email">
+        <a href="/cdn-cgi/l/email-protection#21445959445054404f5561464c40484d0f424e4c" title="Email">
           <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         </a>
         <!-- Twitter/X icon -->
@@ -2466,6 +2466,7 @@
 // ── GREEN CURSOR — Convex Glass Lens with Dynamic Reflection ──
 (function () {
   'use strict';
+  if('ontouchstart'in window||navigator.maxTouchPoints>0)return;
 
   /* CONFIG */
   var LENS_D  = 72;    /* normal diameter (CSS must match)  */
@@ -2916,153 +2917,67 @@ if (wlPanel) {
 </script>
 
 <style>
-/* ── MOBILE FIXES (≤768px only) ── */
-
-/* Hamburger - hidden desktop */
-.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:6px;cursor:pointer;z-index:9999;}
-.nav-hamburger span{display:block;width:22px;height:2px;background:#00ff7a;border-radius:2px;box-shadow:0 0 6px #00ff7a66;transition:all .32s cubic-bezier(.16,1,.3,1);}
-.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
-.nav-hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
-.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-
-/* Mobile nav drawer */
-.mob-drawer{position:fixed;top:0;right:0;bottom:0;width:270px;max-width:85vw;background:rgba(2,8,4,.97);border-left:1px solid rgba(0,255,122,.15);backdrop-filter:blur(28px);z-index:9998;display:flex;flex-direction:column;padding:70px 26px 30px;gap:2px;transform:translateX(100%);transition:transform .38s cubic-bezier(.16,1,.3,1);}
-.mob-drawer.open{transform:translateX(0);}
-.mob-drawer a{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;letter-spacing:.14em;color:#7aad8a;text-decoration:none;padding:13px 0;border-bottom:1px solid rgba(0,255,122,.07);transition:color .2s;display:block;}
-.mob-drawer a:active{color:#00ff7a;}
-.mob-drawer .mob-wa{margin-top:14px;display:flex!important;align-items:center;justify-content:center;gap:8px;background:rgba(0,255,122,.1)!important;border:1px solid rgba(0,255,122,.3)!important;color:#00ff7a!important;padding:12px 14px!important;border-radius:10px;font-size:.72rem!important;}
-.mob-backdrop{display:none;position:fixed;inset:0;background:rgba(2,7,4,.6);backdrop-filter:blur(4px);z-index:9997;opacity:0;transition:opacity .3s;}
-.mob-backdrop.show{opacity:1;}
-
-/* Touch ripple */
-.mob-ripple{position:fixed;pointer-events:none;z-index:9996;border-radius:50%;width:0;height:0;border:1.5px solid rgba(0,255,122,.5);background:radial-gradient(circle,rgba(0,255,122,.1) 0%,transparent 70%);transform:translate(-50%,-50%);opacity:0;}
-@keyframes mobRipple{0%{width:0;height:0;opacity:.75;}100%{width:68px;height:68px;opacity:0;}}
-.mob-ripple.go{animation:mobRipple .5s ease-out forwards;}
-
-@media(max-width:768px){
-  /* ── Fix tap/click issues ── */
-  *{cursor:auto!important;-webkit-tap-highlight-color:rgba(0,255,122,.15)!important;}
-  #cursor-dot,#cursor-lens,#cursor-click-ripple{display:none!important;}
-  a,button,.plan-btn,.hero-cta,.founder-3d-btn,.nav-wa-btn,.plan-btn{
-    -webkit-tap-highlight-color:rgba(0,255,122,.2)!important;
-    touch-action:manipulation;
-  }
-
-  /* ── Hamburger / Nav ── */
-  .nav-hamburger{display:flex!important;}
-  .nav-links{display:none!important;}
-  .mob-drawer{display:flex;}
-  .mob-backdrop{display:block;}
-  nav{padding:14px 18px!important;}
-
-  /* ── Hero ── */
-  #hero{padding:0 18px!important;}
-  .hero-inner{grid-template-columns:1fr!important;gap:32px!important;padding:88px 0 48px!important;}
-  .hero-title{font-size:clamp(2rem,7.5vw,3rem)!important;}
-  .hero-sub{font-size:.93rem!important;max-width:100%!important;}
-
-  /* ── PNL Slider Fix ── */
-  .pnl-slider-wrap{max-width:100%!important;}
-  .pnl-card-3d-inner{padding:22px 18px 18px!important;}
-  .pnl-percent{font-size:2.2rem!important;}
-  .pnl-asset-badge{font-size:1rem!important;}
-  .pnl-type-badge{font-size:.55rem!important;}
-  .pnl-card-prices{padding:12px 0!important;}
-  .pnl-price-val{font-size:.8rem!important;}
-
-  /* ── Sections ── */
-  section{padding:52px 18px!important;max-width:100%!important;}
-  h2.section-title{font-size:clamp(1.7rem,6vw,2.4rem)!important;margin-bottom:24px!important;}
-
-  /* ── Grids → 1 col ── */
-  .engine-grid,.perf-grid,.plans-grid,.signals-grid,.commit-grid{grid-template-columns:1fr!important;}
-  .plan-card.featured{transform:none!important;}
-  .whitlabel-panel{flex-direction:column!important;padding:20px 18px!important;}
-
-  /* ── Jim tribute ── */
-  .jim-tribute-wrap{min-height:320px!important;}
-  .jim-img{width:60%!important;}
-  .jim-quote-block{padding:28px 14px 28px 6px!important;max-width:100%!important;}
-  .jim-quote-text{font-size:clamp(1.3rem,5vw,1.9rem)!important;}
-
-  /* ── Founder CTA ── */
-  .founder-cta-section{padding:52px 18px!important;}
-  .founder-3d-btn-inner{padding:16px 22px!important;font-size:.88rem!important;}
-  .founder-cta-bot-text{font-size:clamp(.95rem,3.5vw,1.3rem)!important;}
-
-  /* ── Footer ── */
-  footer{padding:30px 18px!important;max-width:100%!important;}
-  .footer-inner{flex-direction:column!important;gap:20px!important;}
-  .footer-contact{text-align:left!important;}
-  .footer-socials{justify-content:flex-start!important;}
-}
-
-@media(max-width:480px){
-  nav{padding:12px 14px!important;}
-  .logo{font-size:1.05rem!important;}
-  .logo-img{width:28px!important;height:28px!important;}
-  section{padding:44px 14px!important;}
-  #hero{padding:0 14px!important;}
-  .hero-inner{padding:80px 0 40px!important;}
-  .hero-title{font-size:clamp(1.8rem,6.5vw,2.4rem)!important;}
-  .pnl-percent{font-size:1.9rem!important;}
-  .pnl-card-3d-inner{padding:18px 14px 14px!important;}
-  .founder-3d-btn-inner{padding:14px 18px!important;font-size:.82rem!important;}
-}
+.mob-ham{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:8px;cursor:pointer!important;z-index:99999;flex-shrink:0}
+.mob-ham span{display:block;width:24px;height:2.5px;background:#00ff7a;border-radius:2px;transition:all .3s ease}
+.mob-ham.open span:nth-child(1){transform:translateY(7px)rotate(45deg)}
+.mob-ham.open span:nth-child(2){opacity:0}
+.mob-ham.open span:nth-child(3){transform:translateY(-7px)rotate(-45deg)}
+body.mob .mob-ham{display:flex!important}
+body.mob .nav-links{display:none!important}
+.mob-panel{position:fixed;top:0;right:0;bottom:0;width:300px;background:rgba(2,8,4,.98);border-left:1px solid rgba(0,255,122,.15);backdrop-filter:blur(30px);z-index:99998;flex-direction:column;padding:80px 28px 28px;gap:4px;transform:translateX(100%);transition:transform .35s cubic-bezier(.16,1,.3,1);pointer-events:none;display:flex}
+.mob-panel.open{transform:translateX(0);pointer-events:all}
+.mob-panel a{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.2rem;letter-spacing:.14em;color:#7aad8a;text-decoration:none;padding:16px 0;border-bottom:1px solid rgba(0,255,122,.08);display:block;cursor:pointer!important;-webkit-tap-highlight-color:rgba(0,255,122,.3)}
+.mob-panel a:active{color:#00ff7a}
+.mob-panel .wa-link{margin-top:16px;display:flex!important;align-items:center;justify-content:center;gap:8px;background:rgba(0,255,122,.1)!important;border:1px solid rgba(0,255,122,.3)!important;color:#00ff7a!important;padding:14px!important;border-radius:10px;font-size:.85rem!important;cursor:pointer!important}
+.mob-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:99997;pointer-events:none;opacity:0;transition:opacity .3s}
+.mob-bg.show{opacity:1;pointer-events:all}
+body.mob .mob-bg{display:block}
 </style>
 
-<!-- Mobile HTML elements -->
-<div class="mob-backdrop" id="mobBackdrop"></div>
-<div class="mob-drawer" id="mobDrawer">
-  <a href="#hero">HOME</a>
-  <a href="#engine">ENGINE</a>
-  <a href="#performance">PERFORMANCE</a>
-  <a href="#plans">PLANS</a>
-  <a href="#founder-cta">CONTACT</a>
-  <a href="https://wa.me/+6282155095289" target="_blank" class="mob-wa">
-    <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+<div class="mob-bg" id="mobBg"></div>
+<div class="mob-panel" id="mobPanel">
+  <a href="#hero" onclick="closeMob()">HOME</a>
+  <a href="#engine" onclick="closeMob()">ENGINE</a>
+  <a href="#performance" onclick="closeMob()">PERFORMANCE</a>
+  <a href="#plans" onclick="closeMob()">PLANS</a>
+  <a href="#founder-cta" onclick="closeMob()">CONTACT</a>
+  <a href="https://wa.me/+6282155095289" target="_blank" class="wa-link" onclick="closeMob()">
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
     CONTACT FOUNDER
   </a>
 </div>
-<div class="mob-ripple" id="mobRipple"></div>
 
 <script>
-(function(){
-  /* Inject hamburger into nav */
-  var navEl = document.querySelector('nav');
-  if(navEl){
-    var btn = document.createElement('button');
-    btn.className='nav-hamburger'; btn.id='navHam'; btn.setAttribute('aria-label','Menu');
-    btn.innerHTML='<span></span><span></span><span></span>';
-    navEl.appendChild(btn);
+var _panel=document.getElementById('mobPanel');
+var _bg=document.getElementById('mobBg');
+var _ham=null;
+
+function openMob(){if(_ham)_ham.classList.add('open');if(_panel)_panel.classList.add('open');if(_bg)_bg.classList.add('show');document.body.style.overflow='hidden';}
+function closeMob(){if(_ham)_ham.classList.remove('open');if(_panel)_panel.classList.remove('open');if(_bg)_bg.classList.remove('show');document.body.style.overflow='';}
+
+if('ontouchstart'in window||navigator.maxTouchPoints>0){
+  document.body.classList.add('mob');
+  
+  var nav=document.querySelector('nav');
+  if(nav){
+    var h=document.createElement('button');
+    h.className='mob-ham';
+    h.id='mobHam';
+    h.setAttribute('aria-label','Menu');
+    h.innerHTML='<span></span><span></span><span></span>';
+    nav.appendChild(h);
+    _ham=h;
+    
+    h.addEventListener('touchend',function(e){
+      e.preventDefault();
+      _panel.classList.contains('open')?closeMob():openMob();
+    },{passive:false});
   }
-
-  var ham=document.getElementById('navHam'),
-      drawer=document.getElementById('mobDrawer'),
-      backdrop=document.getElementById('mobBackdrop'),
-      ripple=document.getElementById('mobRipple');
-
-  function openD(){ham.classList.add('open');drawer.classList.add('open');backdrop.classList.add('show');document.body.style.overflow='hidden';}
-  function closeD(){ham.classList.remove('open');drawer.classList.remove('open');backdrop.classList.remove('show');document.body.style.overflow='';}
-
-  if(ham) ham.addEventListener('click',function(e){e.stopPropagation();drawer.classList.contains('open')?closeD():openD();});
-  if(backdrop) backdrop.addEventListener('click',closeD);
-  if(drawer) drawer.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeD);});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeD();});
-
-  /* Touch: hide cursor elements, enable ripple */
-  var isTouch=('ontouchstart' in window)||(navigator.maxTouchPoints>0);
-  if(!isTouch) return;
-  ['cursor-dot','cursor-lens','cursor-click-ripple'].forEach(function(id){
-    var el=document.getElementById(id); if(el) el.style.display='none';
-  });
-  if(!ripple) return;
-  document.addEventListener('touchstart',function(e){
-    var t=e.touches[0]; if(!t) return;
-    ripple.style.left=t.clientX+'px'; ripple.style.top=t.clientY+'px';
-    ripple.classList.remove('go'); void ripple.offsetWidth; ripple.classList.add('go');
-  },{passive:true});
-}());
+  
+  if(_bg){
+    _bg.addEventListener('touchend',function(e){e.preventDefault();closeMob();},{passive:false});
+  }
+}
 </script>
 </body>
 </html>
