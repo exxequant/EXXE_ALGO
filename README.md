@@ -1,4 +1,4 @@
-# EXXE_ALGO[index.html.html](https://github.com/user-attachments/files/26147946/index.html.html)
+# EXXE_ALGO[index.html](https://github.com/user-attachments/files/26147946/index.html.html)
 <!DOCTYPE html>
 <html lang="en">
 <head>
