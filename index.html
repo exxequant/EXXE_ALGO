@@ -2435,9 +2435,9 @@
       <div class="footer-copy">© 2026 EXXE.LAB. All Rights Reserved.<br>Precision Quantitative Trading Engine — B2B Only.</div>
     </div>
     <div class="footer-contact">
-      <a href="/cdn-cgi/l/email-protection#8aeff2f2effbffebe4fecaede7ebe3e6a4e9e5e7" class="footer-wa-link">
+      <a href="/cdn-cgi/l/email-protection#92f7eaeaf7e3e7f3fce6d2f5fff3fbfebcf1fdff" class="footer-wa-link">
         <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block;vertical-align:middle;margin-right:5px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-        <span class="__cf_email__" data-cfemail="d8bda0a0bda9adb9b6ac98bfb5b9b1b4f6bbb7b5">[email&#160;protected]</span>
+        <span class="__cf_email__" data-cfemail="86e3fefee3f7f3e7e8f2c6e1ebe7efeaa8e5e9eb">[email&#160;protected]</span>
       </a>
       <a href="https://wa.me/+6282155095289" target="_blank" class="footer-wa-link">
         <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" style="display:inline-block;vertical-align:middle;margin-right:5px;"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
@@ -2449,7 +2449,7 @@
           <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
         </a>
         <!-- Email icon -->
-        <a href="/cdn-cgi/l/email-protection#74110c0c110501151a00341319151d185a171b19" title="Email">
+        <a href="/cdn-cgi/l/email-protection#b3d6cbcbd6c2c6d2ddc7f3d4ded2dadf9dd0dcde" title="Email">
           <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         </a>
         <!-- Twitter/X icon -->
@@ -2915,85 +2915,103 @@ if (wlPanel) {
 }());
 </script>
 
-<!-- ═══════════════════════════════════════
-     MOBILE ONLY ADDITIONS - tidak mempengaruhi desktop
-     ═══════════════════════════════════════ -->
 <style>
-/* Hamburger button - hidden on desktop */
-.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:6px;cursor:pointer;z-index:9999;position:relative;}
+/* ── MOBILE FIXES (≤768px only) ── */
+
+/* Hamburger - hidden desktop */
+.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:6px;cursor:pointer;z-index:9999;}
 .nav-hamburger span{display:block;width:22px;height:2px;background:#00ff7a;border-radius:2px;box-shadow:0 0 6px #00ff7a66;transition:all .32s cubic-bezier(.16,1,.3,1);}
 .nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
 .nav-hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
 .nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 
-/* Mobile drawer - hidden on desktop */
+/* Mobile nav drawer */
 .mob-drawer{position:fixed;top:0;right:0;bottom:0;width:270px;max-width:85vw;background:rgba(2,8,4,.97);border-left:1px solid rgba(0,255,122,.15);backdrop-filter:blur(28px);z-index:9998;display:flex;flex-direction:column;padding:70px 26px 30px;gap:2px;transform:translateX(100%);transition:transform .38s cubic-bezier(.16,1,.3,1);}
 .mob-drawer.open{transform:translateX(0);}
-.mob-drawer a{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;letter-spacing:.14em;color:#7aad8a;text-decoration:none;padding:13px 0;border-bottom:1px solid rgba(0,255,122,.07);transition:color .2s;}
+.mob-drawer a{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;letter-spacing:.14em;color:#7aad8a;text-decoration:none;padding:13px 0;border-bottom:1px solid rgba(0,255,122,.07);transition:color .2s;display:block;}
 .mob-drawer a:active{color:#00ff7a;}
 .mob-drawer .mob-wa{margin-top:14px;display:flex!important;align-items:center;justify-content:center;gap:8px;background:rgba(0,255,122,.1)!important;border:1px solid rgba(0,255,122,.3)!important;color:#00ff7a!important;padding:12px 14px!important;border-radius:10px;font-size:.72rem!important;}
-
-/* Backdrop */
 .mob-backdrop{display:none;position:fixed;inset:0;background:rgba(2,7,4,.6);backdrop-filter:blur(4px);z-index:9997;opacity:0;transition:opacity .3s;}
 .mob-backdrop.show{opacity:1;}
 
 /* Touch ripple */
-.mob-ripple{position:fixed;pointer-events:none;z-index:99999;border-radius:50%;width:0;height:0;border:1.5px solid rgba(0,255,122,.5);background:radial-gradient(circle,rgba(0,255,122,.1) 0%,transparent 70%);transform:translate(-50%,-50%);opacity:0;}
+.mob-ripple{position:fixed;pointer-events:none;z-index:9996;border-radius:50%;width:0;height:0;border:1.5px solid rgba(0,255,122,.5);background:radial-gradient(circle,rgba(0,255,122,.1) 0%,transparent 70%);transform:translate(-50%,-50%);opacity:0;}
 @keyframes mobRipple{0%{width:0;height:0;opacity:.75;}100%{width:68px;height:68px;opacity:0;}}
 .mob-ripple.go{animation:mobRipple .5s ease-out forwards;}
 
-/* ── ONLY on mobile ≤768px ── */
 @media(max-width:768px){
-  /* Show hamburger, hide desktop nav links */
+  /* ── Fix tap/click issues ── */
+  *{cursor:auto!important;-webkit-tap-highlight-color:rgba(0,255,122,.15)!important;}
+  #cursor-dot,#cursor-lens,#cursor-click-ripple{display:none!important;}
+  a,button,.plan-btn,.hero-cta,.founder-3d-btn,.nav-wa-btn,.plan-btn{
+    -webkit-tap-highlight-color:rgba(0,255,122,.2)!important;
+    touch-action:manipulation;
+  }
+
+  /* ── Hamburger / Nav ── */
   .nav-hamburger{display:flex!important;}
   .nav-links{display:none!important;}
   .mob-drawer{display:flex;}
   .mob-backdrop{display:block;}
+  nav{padding:14px 18px!important;}
 
-  /* Cursor off on touch */
-  *{cursor:auto!important;}
-  #cursor-dot,#cursor-lens,#cursor-click-ripple{display:none!important;}
-
-  /* Hero stack */
+  /* ── Hero ── */
   #hero{padding:0 18px!important;}
-  .hero-inner{grid-template-columns:1fr!important;gap:36px!important;padding:88px 0 50px!important;}
+  .hero-inner{grid-template-columns:1fr!important;gap:32px!important;padding:88px 0 48px!important;}
+  .hero-title{font-size:clamp(2rem,7.5vw,3rem)!important;}
+  .hero-sub{font-size:.93rem!important;max-width:100%!important;}
 
-  /* Sections */
+  /* ── PNL Slider Fix ── */
+  .pnl-slider-wrap{max-width:100%!important;}
+  .pnl-card-3d-inner{padding:22px 18px 18px!important;}
+  .pnl-percent{font-size:2.2rem!important;}
+  .pnl-asset-badge{font-size:1rem!important;}
+  .pnl-type-badge{font-size:.55rem!important;}
+  .pnl-card-prices{padding:12px 0!important;}
+  .pnl-price-val{font-size:.8rem!important;}
+
+  /* ── Sections ── */
   section{padding:52px 18px!important;max-width:100%!important;}
+  h2.section-title{font-size:clamp(1.7rem,6vw,2.4rem)!important;margin-bottom:24px!important;}
 
-  /* Grids to single column */
+  /* ── Grids → 1 col ── */
   .engine-grid,.perf-grid,.plans-grid,.signals-grid,.commit-grid{grid-template-columns:1fr!important;}
-
-  /* Featured plan no scale */
   .plan-card.featured{transform:none!important;}
-
-  /* White label */
   .whitlabel-panel{flex-direction:column!important;padding:20px 18px!important;}
 
-  /* Jim */
-  .jim-tribute-wrap{min-height:340px!important;}
+  /* ── Jim tribute ── */
+  .jim-tribute-wrap{min-height:320px!important;}
   .jim-img{width:60%!important;}
-  .jim-quote-block{padding:32px 14px 32px 6px!important;max-width:100%!important;}
+  .jim-quote-block{padding:28px 14px 28px 6px!important;max-width:100%!important;}
+  .jim-quote-text{font-size:clamp(1.3rem,5vw,1.9rem)!important;}
 
-  /* Founder CTA */
+  /* ── Founder CTA ── */
   .founder-cta-section{padding:52px 18px!important;}
   .founder-3d-btn-inner{padding:16px 22px!important;font-size:.88rem!important;}
+  .founder-cta-bot-text{font-size:clamp(.95rem,3.5vw,1.3rem)!important;}
 
-  /* Footer */
+  /* ── Footer ── */
   footer{padding:30px 18px!important;max-width:100%!important;}
   .footer-inner{flex-direction:column!important;gap:20px!important;}
   .footer-contact{text-align:left!important;}
   .footer-socials{justify-content:flex-start!important;}
 }
+
 @media(max-width:480px){
-  #hero{padding:0 14px!important;}
+  nav{padding:12px 14px!important;}
+  .logo{font-size:1.05rem!important;}
+  .logo-img{width:28px!important;height:28px!important;}
   section{padding:44px 14px!important;}
+  #hero{padding:0 14px!important;}
+  .hero-inner{padding:80px 0 40px!important;}
+  .hero-title{font-size:clamp(1.8rem,6.5vw,2.4rem)!important;}
+  .pnl-percent{font-size:1.9rem!important;}
+  .pnl-card-3d-inner{padding:18px 14px 14px!important;}
   .founder-3d-btn-inner{padding:14px 18px!important;font-size:.82rem!important;}
 }
 </style>
 
-<!-- Hamburger button injected into nav via JS below -->
-<!-- Mobile drawer HTML -->
+<!-- Mobile HTML elements -->
 <div class="mob-backdrop" id="mobBackdrop"></div>
 <div class="mob-drawer" id="mobDrawer">
   <a href="#hero">HOME</a>
@@ -3010,68 +3028,39 @@ if (wlPanel) {
 
 <script>
 (function(){
-  /* Inject hamburger button into nav */
-  var nav = document.querySelector('nav');
-  if(nav){
+  /* Inject hamburger into nav */
+  var navEl = document.querySelector('nav');
+  if(navEl){
     var btn = document.createElement('button');
-    btn.className = 'nav-hamburger';
-    btn.id = 'navHam';
-    btn.setAttribute('aria-label','Menu');
-    btn.innerHTML = '<span></span><span></span><span></span>';
-    nav.appendChild(btn);
+    btn.className='nav-hamburger'; btn.id='navHam'; btn.setAttribute('aria-label','Menu');
+    btn.innerHTML='<span></span><span></span><span></span>';
+    navEl.appendChild(btn);
   }
 
-  var ham      = document.getElementById('navHam');
-  var drawer   = document.getElementById('mobDrawer');
-  var backdrop = document.getElementById('mobBackdrop');
-  var ripple   = document.getElementById('mobRipple');
+  var ham=document.getElementById('navHam'),
+      drawer=document.getElementById('mobDrawer'),
+      backdrop=document.getElementById('mobBackdrop'),
+      ripple=document.getElementById('mobRipple');
 
-  /* Hamburger toggle */
-  function openDrawer(){
-    ham.classList.add('open');
-    drawer.classList.add('open');
-    backdrop.classList.add('show');
-    document.body.style.overflow='hidden';
-  }
-  function closeDrawer(){
-    ham.classList.remove('open');
-    drawer.classList.remove('open');
-    backdrop.classList.remove('show');
-    document.body.style.overflow='';
-  }
-  if(ham){
-    ham.addEventListener('click',function(e){
-      e.stopPropagation();
-      drawer.classList.contains('open')?closeDrawer():openDrawer();
-    });
-  }
-  if(backdrop) backdrop.addEventListener('click',closeDrawer);
-  if(drawer){
-    drawer.querySelectorAll('a').forEach(function(a){
-      a.addEventListener('click',closeDrawer);
-    });
-  }
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeDrawer();});
+  function openD(){ham.classList.add('open');drawer.classList.add('open');backdrop.classList.add('show');document.body.style.overflow='hidden';}
+  function closeD(){ham.classList.remove('open');drawer.classList.remove('open');backdrop.classList.remove('show');document.body.style.overflow='';}
 
-  /* Touch ripple - only on touch devices */
-  var isTouch = ('ontouchstart' in window)||(navigator.maxTouchPoints>0);
+  if(ham) ham.addEventListener('click',function(e){e.stopPropagation();drawer.classList.contains('open')?closeD():openD();});
+  if(backdrop) backdrop.addEventListener('click',closeD);
+  if(drawer) drawer.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeD);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeD();});
+
+  /* Touch: hide cursor elements, enable ripple */
+  var isTouch=('ontouchstart' in window)||(navigator.maxTouchPoints>0);
   if(!isTouch) return;
-
-  /* Hide desktop cursor on touch */
   ['cursor-dot','cursor-lens','cursor-click-ripple'].forEach(function(id){
-    var el=document.getElementById(id);
-    if(el) el.style.display='none';
+    var el=document.getElementById(id); if(el) el.style.display='none';
   });
-
   if(!ripple) return;
   document.addEventListener('touchstart',function(e){
-    var t=e.touches[0];
-    if(!t) return;
-    ripple.style.left=t.clientX+'px';
-    ripple.style.top=t.clientY+'px';
-    ripple.classList.remove('go');
-    void ripple.offsetWidth;
-    ripple.classList.add('go');
+    var t=e.touches[0]; if(!t) return;
+    ripple.style.left=t.clientX+'px'; ripple.style.top=t.clientY+'px';
+    ripple.classList.remove('go'); void ripple.offsetWidth; ripple.classList.add('go');
   },{passive:true});
 }());
 </script>
