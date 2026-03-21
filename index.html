@@ -1885,19 +1885,23 @@
 
     /* PNL slider mobile — compact card centered */
     .pnl-slider-wrap {
-      max-width: 320px;
+      max-width: calc(100vw - 40px);
       width: 100%;
       margin: 0 auto;
       -webkit-mask-image: none;
       mask-image: none;
       overflow: hidden;
+      box-sizing: border-box;
     }
     .pnl-slider {
       align-items: flex-start;
+      will-change: transform;
     }
     .pnl-card-3d {
       flex: 0 0 100% !important;
       max-width: 100% !important;
+      min-width: 0 !important;
+      width: 100% !important;
       height: auto !important;
       padding: 0 4px;
       box-sizing: border-box;
@@ -1961,6 +1965,30 @@
       gap: 20px;
     }
 
+    /* Market Neutral chart mobile — maintain aspect ratio so SHORT/LONG labels are not squished */
+    .big-chart {
+      width: 100% !important;
+      height: auto !important;
+      aspect-ratio: 500 / 200;
+    }
+    .big-chart svg {
+      width: 100% !important;
+      height: auto !important;
+    }
+    .perf-chart-panel {
+      padding: 20px 16px !important;
+    }
+    .perf-metrics {
+      grid-template-columns: 1fr 1fr 1fr !important;
+      gap: 8px !important;
+    }
+    .stat-label {
+      font-size: 0.52rem !important;
+    }
+    .stat-val {
+      font-size: 1rem !important;
+    }
+
     /* Signals grid mobile */
     .signals-grid {
       grid-template-columns: 1fr !important;
@@ -2004,10 +2032,46 @@
 
     /* Jim tribute mobile */
     .jim-tribute-wrap {
-      min-height: 300px;
+      min-height: auto !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: flex-start !important;
+      padding-bottom: 40px;
     }
     .jim-img {
+      position: relative !important;
+      left: auto !important;
+      top: auto !important;
+      width: 100% !important;
+      height: 280px !important;
+      object-position: center top;
+    }
+    .jim-bg-overlay {
+      display: none;
+    }
+    .jim-quote-block {
+      position: relative !important;
+      z-index: 2;
+      max-width: 100% !important;
       width: 100%;
+      padding: 28px 20px 20px !important;
+      text-align: center !important;
+      background: linear-gradient(180deg, rgba(2,7,4,0) 0%, rgba(2,7,4,0.95) 20%, var(--black) 100%);
+      margin-top: -60px;
+    }
+    .jim-quote-line {
+      margin: 0 auto 20px !important;
+      background: linear-gradient(90deg, transparent, var(--green-glow), transparent) !important;
+    }
+    .jim-quote-text {
+      font-size: clamp(1.3rem, 5vw, 1.8rem) !important;
+      text-align: center !important;
+    }
+    .jim-dedication {
+      text-align: center !important;
+    }
+    .jim-sub {
+      text-align: center !important;
     }
 
     /* Whitlabel panel mobile */
@@ -2425,7 +2489,7 @@
         <div class="chart-live">NO BIAS</div>
       </div>
       <div class="big-chart" style="margin-bottom:20px;">
-        <svg viewBox="0 0 500 200" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" id="btcAlgoChart">
+        <svg viewBox="0 0 500 200" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" id="btcAlgoChart">
           <defs>
             <linearGradient id="bigGrad" x1="0" y1="0" x2="0" y2="1">
               <stop offset="0%" stop-color="#00ff7a" stop-opacity="0.18"/>
@@ -3192,23 +3256,32 @@ if (wlPanel) {
     let current = 0, startX = 0, isDragging = false, dragOffset = 0;
     const track = wrap.querySelector('.pnl-slider');
 
-    // Setup: make track wide enough for all cards
+    // Setup: make track wide enough for all cards — pixel-based for reliable mobile behavior
     track.style.display = 'flex';
-    var isMobile = window.innerWidth <= 768;
-    track.style.width = (total * 100) + '%';
     track.style.willChange = 'transform';
-    cards.forEach(c => {
-      var cardPct = 100/total;
-      c.style.flex = '0 0 ' + cardPct + '%';
-      c.style.maxWidth = cardPct + '%';
-    });
 
-    function getBaseX() { return -(current / total) * 100; }
+    function getCardWidth() { return wrap.offsetWidth; }
+
+    function applyCardSizes() {
+      var w = getCardWidth();
+      track.style.width = (total * w) + 'px';
+      cards.forEach(c => {
+        c.style.flex = '0 0 ' + w + 'px';
+        c.style.maxWidth = w + 'px';
+        c.style.minWidth = w + 'px';
+        c.style.width = w + 'px';
+      });
+    }
+
+    applyCardSizes();
+    window.addEventListener('resize', function() { applyCardSizes(); goTo(current, false); });
+
+    function getBaseX() { return -(current * getCardWidth()); }
 
     function goTo(idx, animate) {
       current = ((idx % total) + total) % total;
       track.style.transition = (animate === false) ? 'none' : 'transform 0.45s cubic-bezier(0.25,1,0.35,1)';
-      track.style.transform = 'translateX(' + getBaseX() + '%)';
+      track.style.transform = 'translateX(' + getBaseX() + 'px)';
       allDots.forEach((d, i) => d.classList.toggle('active', i === current));
     }
 
@@ -3218,13 +3291,12 @@ if (wlPanel) {
     function onMove(x) {
       if (!isDragging) return;
       dragOffset = x - startX;
-      const pct = getBaseX() + (dragOffset / wrap.offsetWidth) * 100;
-      track.style.transform = 'translateX(' + pct + '%)';
+      track.style.transform = 'translateX(' + (getBaseX() + dragOffset) + 'px)';
     }
     function onEnd() {
       if (!isDragging) return;
       isDragging = false;
-      const threshold = wrap.offsetWidth * 0.18;
+      const threshold = getCardWidth() * 0.18;
       if (dragOffset < -threshold) goTo(current + 1);
       else if (dragOffset > threshold) goTo(current - 1);
       else goTo(current);
